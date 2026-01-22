@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import ProductCard from './components/ProductCard';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    
+    <div className="app">
+
+      <Header storeName="School Supplies Store"/>
+      
+      <Hero 
+        heroTitle={
+          <>
+            Welcome to <br />
+            ComponentCorner
+          </>
+        }
+        heroPara={
+          <>
+            Discover amazing products built <br />
+            using React components
+          </>
+        }
+        heroButton = "Shop now"
+        image = "https://placehold.co/1200x400/667eea/ffffff?text"
+      />
+
+      <ProductCard
+        name="Pencil"
+        price={0.99}
+        image="https://placehold.co/600x400"
+        description="Sharpened lead writing utinsil with eraser."
+      />
+
+      <ProductCard
+        name="Pen"
+        price={1.29}
+        image="https://placehold.co/600x400"
+        description="Ink powered clickable writing utinsil."
+      />
+
+      <ProductCard
+        name="Paper"
+        price={0.33}
+        image="https://placehold.co/600x400"
+        description="8x11 flat white construction paper to write on."
+      />
+      
+      <Footer
+        title = "ComponentCenter"
+        storeName = "School Supplies Store"
+        storeEmail = "componentcenter.bushnell.edu"
+        storePhone = "541.602.9963"
+        storeLocation = "123 Bushnell St. Eugene, OR"
+
+      />
+
+    </div>
+  );
 }
 
-export default App
+export default App;
+
+
+
